@@ -1,6 +1,6 @@
-let display = (function displayProduct(reference, price, description){
+function displayProduct(reference, price, description){
     
-    const structureProduit = `
+    let structureProduit = `
     <div class="product">
 					<div class="photo">
 						<span class="mdi mdi-camera"></span>
@@ -20,16 +20,17 @@ let display = (function displayProduct(reference, price, description){
 				</div>
     `;
     return structureProduit;
-}) ();
+};
 
-let _build = (function buildProductsList(products){
+export function buildProductsList(products){
 
+    for(var i = 0; i <= products.length; i++){
+        console.log(products[i].reference);
+        displayProduct(products[i].reference, products[i].price, products[i].description);
+    }
+    /**
     products.forEach((val) =>{
-        display(products[val].getReference(), products[val].getPrice(), products[val].getDescription());
-    })
+        display(val.getReference(), val.getPrice(), val.getDescription());
+    })*/
 
-})();
-
-export default{
-    build: _build
 }
