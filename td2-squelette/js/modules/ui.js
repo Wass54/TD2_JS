@@ -1,5 +1,7 @@
-function displayProduct(reference, price, description){
+export function _displayProduct(reference, price, description){
     
+    let id = document.getElementById("product-list");
+
     let structureProduit = `
     <div class="product">
 					<div class="photo">
@@ -19,15 +21,16 @@ function displayProduct(reference, price, description){
 					</div>
 				</div>
     `;
-    return structureProduit;
+    id.innerHTML += structureProduit;
+
 };
 
 export function buildProductsList(products){
 
     for(var i = 0; i <= products.length; i++){
-        console.log(products[i].reference);
-        displayProduct(products[i].reference, products[i].price, products[i].description);
+        _displayProduct(products[i].reference, products[i].price, products[i].description);
     }
+
     /**
     products.forEach((val) =>{
         display(val.getReference(), val.getPrice(), val.getDescription());
