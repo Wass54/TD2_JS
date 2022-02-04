@@ -5,6 +5,6 @@ m1.products.forEach((val) =>{
    console.log(val);
 })
 
-console.log(buildProductsList(m1.products));
+buildProductsList(m1.products);
 
 //import toto from "./lib.js"
