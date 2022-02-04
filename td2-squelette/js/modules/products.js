@@ -6,6 +6,18 @@ class produit{
         this.price = price;
         this.description = description
     }
+
+    getReference(){
+        return this.reference;
+    }
+
+    getPrice(){
+        return this.price;
+    }
+
+    getDescription(){
+        return this.description;
+    }
 }
 
 let p = new produit('A123', 3, 'Pomme');
