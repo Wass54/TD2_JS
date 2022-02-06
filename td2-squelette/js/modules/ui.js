@@ -1,4 +1,4 @@
-export function _displayProduct(reference, price, description){
+export function displayProduct(reference, price, description){
     
     let id = document.getElementById("product-list");
 
@@ -28,7 +28,7 @@ export function _displayProduct(reference, price, description){
 export function buildProductsList(products){
 
     for(var i = 0; i <= products.length; i++){
-        _displayProduct(products[i].reference, products[i].price, products[i].description);
+        displayProduct(products[i].reference, products[i].price, products[i].description);
     }
 
     /**
