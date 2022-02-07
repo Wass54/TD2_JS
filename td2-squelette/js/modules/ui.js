@@ -1,4 +1,4 @@
-export function displayProduct(reference, price, description){
+function displayProduct(reference, price, description){
     
     let id = document.getElementById("product-list");
 
