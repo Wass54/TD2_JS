@@ -2,9 +2,11 @@ import * as p from "./products.js";
 import * as u from "./ui.js";
 
 
-function init(){
+export function init(){
 
-    
+
+      
+  u.buildProductsList();  
 
 
 }
