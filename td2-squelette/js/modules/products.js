@@ -6,7 +6,6 @@ class produit{
         this.price = price;
         this.description = description
     }
-
 }
 
 let p = new produit('A123', 3, 'Pomme');
