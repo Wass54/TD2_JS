@@ -25,9 +25,9 @@ function displayProduct(reference, price, description){
 
 };
 
-export function buildProductsList(products){
+export const buildProductsList =  function(products){
 
-    for(var i = 0; i <= products.length; i++){
+    for(var i = 0; i < products.length; i++){
         displayProduct(products[i].reference, products[i].price, products[i].description);
     }
 

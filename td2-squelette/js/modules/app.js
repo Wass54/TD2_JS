@@ -1,12 +1,10 @@
-import * as p from "./products.js";
-import * as u from "./ui.js";
+import p from "./products.js";
+import {buildProductsList} from "./ui.js";
 
 
-export function init(){
+export const init = function(){
 
-
-      
-  u.buildProductsList();  
-
+  buildProductsList(p.products);  
 
 }
+
