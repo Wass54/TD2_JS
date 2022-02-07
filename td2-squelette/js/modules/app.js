@@ -4,20 +4,7 @@ import {buildProductsList} from "./ui.js";
 
 export const init = function(){
 
-  buildProductsList(p.products); 
+  buildProductsList(p.products);  
 
-
-
-  let recherche = document.getElementById('product-search');
-
-    recherche.addEventListener('keyup', (event) => {
-    const nomTouche = event.key;
-
-    console.log(recherche.value);
-    buildProductsList(p.search(recherche.value));
-
-
-
-})
 }
 

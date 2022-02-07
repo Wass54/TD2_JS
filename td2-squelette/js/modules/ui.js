@@ -1,9 +1,9 @@
-function displayProduct(reference, price, description){
-    
-    let id = document.getElementById("product-list");
+import {addToCart} from "./cart.js";
 
-    let structureProduit = `
-    <div class="product">
+function displayProduct(product){
+    
+	let structureProduit = `
+    	<div class="product">
 					<div class="photo">
 						<span class="mdi mdi-camera"></span>
 						<a class="product-add2cart">
@@ -12,31 +12,39 @@ function displayProduct(reference, price, description){
 					</div>
 					<div class="details">
 						<div class="details-top">
-							<strong class="bigger" data-type="ref">${reference}</strong>
-							<strong class="bigger" data-type="price">${price}</strong>
+							<strong class="bigger" data-type="ref">${product.reference}</strong>
+							<strong class="bigger" data-type="price">${product.price}</strong>
 						</div>
 						<div class="details-description">
-							${description}
+							${product.description}
 						</div>
 					</div>
 				</div>
-    `;
-    id.innerHTML += structureProduit;
+    `	;
 
+	/** 
+	let clCart = structureProduit.getElementsByClassName("product-add2cart");
+		clCart.addEventListener("click", function(e){
+			addToCart(product);
+		});
+
+	return structureProduit;
+	*/
 };
 
 export const buildProductsList =  function(products){
 
+	for(var i = 0; i < products.length; i++){
+		let id = document.getElementById("product-list");
+        let structureProduit = displayProduct(products[i]);
+		id.innerHTML += structureProduit;
+    }
+
+
+	/** 
     for(var i = 0; i < products.length; i++){
         displayProduct(products[i].reference, products[i].price, products[i].description);
     }
+	*/
 
-    /**
-    products.forEach((val) =>{
-        display(val.getReference(), val.getPrice(), val.getDescription());
-    })*/
-
-}
-export default{
-	buildProductsList
 }
