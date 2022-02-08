@@ -1,4 +1,5 @@
 import {addToCart} from "./cart.js";
+import p from "./cart.js"; //a supprimer
 
 function displayProduct(product){
     
@@ -21,23 +22,38 @@ function displayProduct(product){
 					</div>
 				</div>
     `	;
-
+	
 	/** 
-	let clCart = structureProduit.getElementsByClassName("product-add2cart");
-		clCart.addEventListener("click", function(e){
+	let clCart = document.getElementsByClassName("product-add2cart");
+	for(var i = 0; i < clCart.length; i++){
+		clCart[i].addEventListener('click', function(e){
 			addToCart(product);
+			console.log('test');
 		});
+	}*/
 
 	return structureProduit;
-	*/
 };
 
-export const buildProductsList =  function(products){
+export const buildProductsList = function(products){
+
+	let id = document.getElementById("product-list");
 
 	for(var i = 0; i < products.length; i++){
-		let id = document.getElementById("product-list");
         let structureProduit = displayProduct(products[i]);
+		console.log(products[i]);
 		id.innerHTML += structureProduit;
+		let clCart = document.getElementsByClassName("product-add2cart");
+		//for(var j = 0; j < clCart.length; j++){
+		clCart[i].addEventListener('click', function(e){
+			addToCart(products[i]);
+				//console.log(products[0]);
+			console.log('test');
+				//console.log(p.panier[1]);
+				//console.log(p.panier[2]);
+		});
+		//}
+			
     }
 
 

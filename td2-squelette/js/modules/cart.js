@@ -20,3 +20,8 @@ export const addToCart = function(produit){
     }
 
 }
+
+//a supprimer
+export default{
+    panier : _panier
+}
