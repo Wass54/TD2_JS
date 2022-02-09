@@ -1,6 +1,25 @@
 //contenu du panier
 let _panier = [];
 
+
+
+
+class panier{
+    constructor(ref, price, description){
+        this.reference = ref;
+        this.price = price;
+        this.description = description
+    }
+}
+
+let p = new panier('A111', 3, 'Pomme');
+let p2 = new panier('A222', 4, 'Banane');
+let p3 = new panier('A333', 5, 'Kiwi');
+
+_panier.push(p);
+_panier.push(p2);
+_panier.push(p3);
+
 class objet{
     constructor(produit, quantite){
         this.produit = produit;
@@ -21,6 +40,9 @@ export const addToCart = function(produit){
 
 }
 
+export const emptyCart = function(){
+    _panier = []
+}
 //a supprimer
 export default{
     panier : _panier

@@ -1,5 +1,6 @@
 import p, {search} from "./products.js";
 import {buildProductsList} from "./ui.js";
+import {emptyCart} from "./cart.js";
 
 
 export const init = function(){
@@ -15,6 +16,15 @@ export const init = function(){
           buildProductsList(search(recherche.value));
         }
     })
+
+  let idPanier = document.getElementById("empty-cart");
+
+  idPanier.addEventListener('click', function(){
+    emptyCart();
+  })
+
+
+
 
 }
 
