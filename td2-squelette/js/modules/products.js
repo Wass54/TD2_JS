@@ -16,8 +16,13 @@ _products.push(p);
 _products.push(p2);
 _products.push(p3);
 
+export const search = function (keywords){
+    let tab = [];
+    tab = _products.filter(e => e.reference.includes(keywords) || e.description.includes(keywords));
+    return tab;
+}
 
 export default{
-    products: _products
+    products: _products,
 }
  

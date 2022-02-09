@@ -27,14 +27,16 @@ function displayProduct(product){
 	});
 	return element;
 
+}
 
-};
 
 export const buildProductsList = function(products){
 
+
+
 	let query = document.getElementById("product-list");
+	query.innerHTML = "";
 	for(var i = 0; i < products.length; i++){
         query.appendChild(displayProduct(products[i]));
-    }
-
+	}
 }
