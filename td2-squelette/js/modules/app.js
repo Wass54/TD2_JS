@@ -14,7 +14,9 @@ export const init = function(){
     const nomTouche = event.key;
 
     console.log(recherche.value);
-    buildProductsList(p.search(recherche.value));
+    if(nomTouche=='Enter'){
+      buildProductsList(p.search(recherche.value));
+    }
 
 
 

@@ -21,12 +21,15 @@ function displayProduct(reference, price, description){
 					</div>
 				</div>
     `;
+
     id.innerHTML += structureProduit;
 
 };
 
 export const buildProductsList =  function(products){
+    let id = document.getElementById("product-list");
 
+	id.innerHTML = '';
     for(var i = 0; i < products.length; i++){
         displayProduct(products[i].reference, products[i].price, products[i].description);
     }

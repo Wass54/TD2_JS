@@ -17,7 +17,7 @@ _products.push(p2);
 _products.push(p3);
 
 const search = function (keywords){ // 3 façons de le faire
-    // let tab = [];
+    let tab = [];
     // _products.forEach(element => {
     //     if(element.reference == keywords || element.description == keywords){
     //         tab.push(element);
@@ -27,8 +27,8 @@ const search = function (keywords){ // 3 façons de le faire
 
 
     // return _products = _products.filter(e => e.reference == keywords || e.description == keywords);
-
-    return _products = _products.filter(e => e.reference.includes(keywords) || e.description.includes(keywords));
+    tab = _products.filter(e => e.reference.includes(keywords) || e.description.includes(keywords));
+    return tab;
 }
 
 export default{
