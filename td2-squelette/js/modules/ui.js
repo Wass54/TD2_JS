@@ -3,7 +3,8 @@ import p, {addToCart} from "./cart.js";
 function displayProduct(product){
 	let structureProduit = `
 					<div class="photo">
-						<span class="mdi mdi-camera"></span>
+
+                        <img src="${product.url}"> 
 						<a class="product-add2cart">
 							<span class="mdi mdi-cart"></span>
 						</a>
@@ -12,6 +13,7 @@ function displayProduct(product){
 						<div class="details-top">
 							<strong class="bigger" data-type="ref">${product.reference}</strong>
 							<strong class="bigger" data-type="price">${product.price}</strong>
+                            
 						</div>
 						<div class="details-description">
 							${product.description}
@@ -28,7 +30,6 @@ function displayProduct(product){
 	return element;
 
 }
-
 
 export const buildProductsList = function(products){
 

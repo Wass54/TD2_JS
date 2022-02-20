@@ -1,16 +1,17 @@
 let _products = [];
 
 class produit{
-    constructor(ref, price, description){
+    constructor(ref, price, description, url){
         this.reference = ref;
         this.price = price;
-        this.description = description
+        this.description = description;
+        this.url = url;
     }
 }
 
-let p = new produit('A111', 3, 'Pomme');
-let p2 = new produit('A222', 4, 'Banane');
-let p3 = new produit('A333', 5, 'Kiwi');
+let p = new produit('A111', 3, 'Pomme', './img/1.jpg');
+let p2 = new produit('A222', 4, 'Banane', './img/2.jpg');
+let p3 = new produit('A333', 5, 'Kiwi', './img/3.jpg');
 
 _products.push(p);
 _products.push(p2);
