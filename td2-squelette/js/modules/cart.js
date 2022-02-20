@@ -43,6 +43,7 @@ export const addToCart = function(produit){
 export const emptyCart = function(){
     _panier = []
 }
+
 //a supprimer
 export default{
     panier : _panier
