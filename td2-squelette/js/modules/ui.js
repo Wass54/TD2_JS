@@ -1,4 +1,6 @@
+import cart from "./cart.js";
 import p, {addToCart} from "./cart.js";
+import {genericCalc} from "./cart.js";
 
 function displayProduct(product){
 	let structureProduit = `
@@ -32,8 +34,6 @@ function displayProduct(product){
 
 export const buildProductsList = function(products){
 
-
-
 	let query = document.getElementById("product-list");
 	query.innerHTML = "";
 	for(var i = 0; i < products.length; i++){
@@ -43,6 +43,29 @@ export const buildProductsList = function(products){
 
 //prend en charge l'affichage du panier
 //j'en étais à là (tests)
+
+const displayCart = function(){
+
+	let panier = p.panier;
+	
+	document.getElementById("cart-content").innerHTML = panier 
+	.map(productInCart => {
+		return `<tr>
+			<td data-type="ref">${productInCart.produit.reference}</td>
+			<td data-type="qte">${productInCart.qty}</td>
+			<td data-type="amount">${productInCart.produit.price}</td>
+		</tr>`
+	})
+	.reduce((productTable, productRow)=>productTable+productRow, ' ');
+
+	let cartProdNumber = document.getElementById("total-products");
+	let cartTotal = document.getElementById("cart-total");
+
+	cartProdNumber.innerText = genericCalc((sum, produit) => sum+produit.qty, 0);
+	cartTotal.innerText = genericCalc((total,produit) => total+produit.produit.price * produit.qty, 0);
+
+}
+
 /** 
 const displayCart = function(){
     let panier = p.panier;
@@ -51,6 +74,15 @@ const displayCart = function(){
     for(var i = 0; i < panier.length ; i++){
         somme += panier[i].qty;    
     }
+	let element = document.createElement("div");
+	element.classList.add('product');
+	element.innerHTML = structureProduit;
+
+	//Récupération de la référence à la table
+	var refTable = document.getElementById(tableID);
+	
+	//Inserer la ligne dans la table
+	var nouvelleLigne = refTable.insertRow(); 
 
     let structurePanier = `
         <div id="cart-header">
@@ -76,6 +108,6 @@ const displayCart = function(){
     `;
 
 
-}
-*/
+}*/
+
 

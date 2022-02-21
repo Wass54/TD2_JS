@@ -1,9 +1,6 @@
 //contenu du panier
 let _panier = [];
 
-
-
-
 class panier{
     constructor(ref, price, description){
         this.reference = ref;
@@ -38,6 +35,10 @@ export const addToCart = function(produit){
         _panier.push(tmp);
     }
 
+}
+
+export const genericCalc = function(calc, init){
+	return _panier.reduce(calc,init);
 }
 
 export const emptyCart = function(){
