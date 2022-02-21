@@ -34,6 +34,7 @@ export const addToCart = function(produit){
     }else{
         _panier.push(tmp);
     }
+    save();
 
 }
 
@@ -43,6 +44,25 @@ export const genericCalc = function(calc, init){
 
 export const emptyCart = function(){
     _panier = []
+    save();
+}
+
+
+export const save = function() {
+    let tabSer = JSON.stringify(_panier);
+    localStorage.setItem("CléUnique4.0", tabSer);
+    console.log("sauvegarde du tableau !");  
+  }
+  
+export const load = function() {
+    let nvTab = localStorage.getItem("CléUnique4.0");
+    if (nvTab != null || nvTab != undefined) {
+        let tabDeSer = JSON.parse(nvTab);
+        this._panier = tabDeSer;
+
+    }else {
+        this.tab = [];
+    }
 }
 
 //a supprimer

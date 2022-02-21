@@ -1,6 +1,7 @@
 import p, {search} from "./products.js";
 import {buildProductsList} from "./ui.js";
 import {emptyCart} from "./cart.js";
+import {load} from "./cart.js";
 
 
 export const init = function(){
@@ -24,7 +25,15 @@ export const init = function(){
   })
 
 
+  //--- ESSAIE 
+  /*
+	let element = document.createElement("div");
+	element.querySelector(".product-add2cart").addEventListener('click', function(e){
+		addToCart(p.products);
+	});*/
 
-
+  // save();
+  load();
 }
+
 
