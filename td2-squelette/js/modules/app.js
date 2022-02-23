@@ -2,11 +2,12 @@ import p, {search} from "./products.js";
 import {buildProductsList} from "./ui.js";
 import {emptyCart} from "./cart.js";
 import {load} from "./cart.js";
+import {displayCart} from "./ui.js";
 
 
 export const init = function(){
   
-
+  displayCart();
   buildProductsList(p.products); 
 
   let recherche = document.getElementById('product-search');

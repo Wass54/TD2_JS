@@ -58,10 +58,10 @@ export const load = function() {
     let nvTab = localStorage.getItem("CléUnique4.0");
     if (nvTab != null || nvTab != undefined) {
         let tabDeSer = JSON.parse(nvTab);
-        this._panier = tabDeSer;
+        _panier = tabDeSer;
 
     }else {
-        this.tab = [];
+        tab = [];
     }
 }
 
