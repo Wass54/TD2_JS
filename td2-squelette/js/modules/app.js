@@ -1,13 +1,11 @@
 import p, {search} from "./products.js";
 import {buildProductsList} from "./ui.js";
 import {emptyCart} from "./cart.js";
-import {load} from "./cart.js";
-import {displayCart} from "./ui.js";
+//import {load} from "./cart.js";
 
 
 export const init = function(){
   
-  displayCart();
   buildProductsList(p.products); 
 
   let recherche = document.getElementById('product-search');
@@ -19,6 +17,7 @@ export const init = function(){
         }
     })
 
+  
   let idPanier = document.getElementById("empty-cart");
 
   idPanier.addEventListener('click', function(){
@@ -26,15 +25,8 @@ export const init = function(){
   })
 
 
-  //--- ESSAIE 
-  /*
-	let element = document.createElement("div");
-	element.querySelector(".product-add2cart").addEventListener('click', function(e){
-		addToCart(p.products);
-	});*/
-
   // save();
-  load();
+  //load();
 }
 
 

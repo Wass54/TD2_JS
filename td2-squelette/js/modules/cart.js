@@ -9,14 +9,6 @@ class panier{
     }
 }
 
-let p = new panier('A111', 3, 'Pomme');
-let p2 = new panier('A222', 4, 'Banane');
-let p3 = new panier('A333', 5, 'Kiwi');
-
-_panier.push(p);
-_panier.push(p2);
-_panier.push(p3);
-
 class objet{
     constructor(produit, quantite){
         this.produit = produit;
@@ -34,7 +26,8 @@ export const addToCart = function(produit){
     }else{
         _panier.push(tmp);
     }
-    save();
+    
+    //save();
 
 }
 
@@ -43,8 +36,21 @@ export const genericCalc = function(calc, init){
 }
 
 export const emptyCart = function(){
-    _panier = []
-    save();
+    _panier = [];
+    //location.reload();
+    let cartProdNumber = document.getElementById("total-products");
+	let cartTotal = document.getElementById("cart-total");
+
+    cartProdNumber.innerText = 0
+	cartTotal.innerText = 0 + '€';
+
+    let cart = document.getElementById("cart-content");
+    let fils = document.getElementById("table");
+    cart.appendChild(fils);
+    cart.removeChild(fils);
+
+    
+    //save();
 }
 
 
@@ -54,6 +60,7 @@ export const save = function() {
     console.log("sauvegarde du tableau !");  
   }
   
+  /** 
 export const load = function() {
     let nvTab = localStorage.getItem("CléUnique4.0");
     if (nvTab != null || nvTab != undefined) {
@@ -63,9 +70,8 @@ export const load = function() {
     }else {
         tab = [];
     }
-}
+}*/
 
-//a supprimer
 export default{
     panier : _panier
 }

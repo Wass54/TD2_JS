@@ -28,6 +28,8 @@ function displayProduct(product){
 	element.innerHTML = structureProduit;
 	element.querySelector(".product-add2cart").addEventListener('click', function(e){
 		addToCart(product);
+		displayCart();
+		//console.log(p.panier);
 	});
 	return element;
 
@@ -50,11 +52,10 @@ export const displayCart = function(){
 	
 	document.getElementById("cart-content").innerHTML = panier 
 	.map(productInCart => {
-		console.log(productInCart);
-		return `<tr>
-			<td data-type="ref">${productInCart.reference}</td>
-			<td data-type="qte">${productInCart.qty}</td>
-			<td data-type="amount">${productInCart.price}</td>
+		return `<tr id = "table">
+			<td data-type="ref">${productInCart.produit.reference}</td>
+			<td data-type="qte">x${productInCart.qty}</td>
+			<td data-type="amount">${productInCart.produit.price} €</td>
 		</tr>`
 	})
 	.reduce((productTable, productRow)=>productTable+productRow, ' ');
@@ -63,6 +64,6 @@ export const displayCart = function(){
 	let cartTotal = document.getElementById("cart-total");
 
 	cartProdNumber.innerText = genericCalc((sum, produit) => sum+produit.qty, 0);
-	cartTotal.innerText = genericCalc((total,produit) => total+produit.price * produit.qty, 0);
+	cartTotal.innerText = genericCalc((total,produit) => total +produit.produit.price * produit.qty, 0) + '€';
 
 }
