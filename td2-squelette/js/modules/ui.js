@@ -52,7 +52,7 @@ export const displayCart = function(){
 	
 	document.getElementById("cart-content").innerHTML = panier 
 	.map(productInCart => {
-		return `<tr id = "table">
+		return `<tr>
 			<td data-type="ref">${productInCart.produit.reference}</td>
 			<td data-type="qte">x${productInCart.qty}</td>
 			<td data-type="amount">${productInCart.produit.price} €</td>
