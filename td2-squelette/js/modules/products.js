@@ -9,9 +9,9 @@ class produit{
     }
 }
 
-let p = new produit('A111', 3, 'Pomme', './img/1.jpg');
+let p = new produit('A111', 3, 'Pomme', './img/3.jpg');
 let p2 = new produit('A222', 4, 'Banane', './img/2.jpg');
-let p3 = new produit('A333', 5, 'Kiwi', './img/3.jpg');
+let p3 = new produit('A333', 5, 'Kiwi', './img/1.jpg');
 
 _products.push(p);
 _products.push(p2);
