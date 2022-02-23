@@ -37,8 +37,9 @@ export const genericCalc = function(calc, init){
 
 export const emptyCart = function(){
     _panier = [];
-    //window.location.href = "index.html";
+    window.location.href = "index.html";
     
+    /** 
     let cartProdNumber = document.getElementById("total-products");
 	let cartTotal = document.getElementById("cart-total");
 
@@ -47,10 +48,11 @@ export const emptyCart = function(){
 
     let cart = document.getElementById("cart-content");
     let fils = document.querySelector('tr');
+
     cart.appendChild(fils);
     cart.removeChild(fils);
-    
-    
+    */
+
     //save();
 }
 

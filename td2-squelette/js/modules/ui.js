@@ -49,7 +49,7 @@ export const buildProductsList = function(products){
 export const displayCart = function(){
 
 	let panier = p.panier;
-	
+
 	document.getElementById("cart-content").innerHTML = panier 
 	.map(productInCart => {
 		return `<tr>
@@ -63,7 +63,7 @@ export const displayCart = function(){
 	let cartProdNumber = document.getElementById("total-products");
 	let cartTotal = document.getElementById("cart-total");
 
-	cartProdNumber.innerText = genericCalc((sum, produit) => sum+produit.qty, 0);
+	cartProdNumber.innerText = 'x' + genericCalc((sum, produit) => sum+produit.qty, 0);
 	cartTotal.innerText = genericCalc((total,produit) => total +produit.produit.price * produit.qty, 0) + '€';
 
 }
