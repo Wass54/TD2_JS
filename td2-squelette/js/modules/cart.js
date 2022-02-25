@@ -37,7 +37,11 @@ export const genericCalc = function(calc, init){
 
 export const emptyCart = function(){
     _panier = [];
-    window.location.href = "index.html";
+    document.getElementById("cart-content").innerHTML = 'Votre panier est vide';
+    document.getElementById("total-products").innerHTML = 'x0';
+    document.getElementById("cart-total").innerHTML = '0€';
+
+    //window.location.href = "index.html";
     
     /** 
     let cartProdNumber = document.getElementById("total-products");
@@ -74,6 +78,12 @@ export const load = function() {
         tab = [];
     }
 }*/
+
+export const getPanier = function(){
+
+    return _panier;
+
+}
 
 export default{
     panier : _panier

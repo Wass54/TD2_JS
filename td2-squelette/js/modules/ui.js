@@ -1,5 +1,6 @@
 import cart from "./cart.js";
 import p, {addToCart} from "./cart.js";
+import {getPanier} from "./cart.js";
 import {genericCalc} from "./cart.js";
 
 function displayProduct(product){
@@ -48,7 +49,7 @@ export const buildProductsList = function(products){
 //prend en charge l'affichage du panier
 export const displayCart = function(){
 
-	let panier = p.panier;
+	let panier = getPanier();
 
 	document.getElementById("cart-content").innerHTML = panier 
 	.map(productInCart => {
