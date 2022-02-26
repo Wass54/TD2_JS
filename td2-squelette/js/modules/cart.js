@@ -3,8 +3,6 @@ import {displayCart} from "./ui.js";
 //contenu du panier
 let _panier = [];
 
-let message = "";
-
 class panier{
     constructor(ref, price, description){
         this.reference = ref;
@@ -20,7 +18,7 @@ class objet{
     }
 }
 
-//paramètre un produit (reference,price,description)
+//ajoute un produit dans le panier
 export const addToCart = function(produit){
 
     let tmp = new objet(produit, 1);
@@ -39,6 +37,7 @@ export const genericCalc = function(calc, init){
 	return _panier.reduce(calc,init);
 }
 
+//permet de vider le panier
 export const emptyCart = function(){
     if (_panier.length === 0) { 
         document.getElementById("cart-content").innerHTML = 'Votre panier est déjà vide!';

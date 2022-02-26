@@ -3,7 +3,7 @@ import {buildProductsList} from "./ui.js";
 import {emptyCart} from "./cart.js";
 import {load} from "./cart.js";
 
-
+//permet d'initialiser la page
 export const init = function(){
   
   buildProductsList(p.products); 

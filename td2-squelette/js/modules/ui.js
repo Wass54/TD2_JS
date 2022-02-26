@@ -2,6 +2,7 @@ import {addToCart} from "./cart.js";
 import {getPanier} from "./cart.js";
 import {genericCalc} from "./cart.js";
 
+//permet d'afficher les produits
 function displayProduct(product){
 	let structureProduit = `
 					<div class="photo">
@@ -34,6 +35,7 @@ function displayProduct(product){
 
 }
 
+//permet la construction de l'affichage des produits
 export const buildProductsList = function(products){
 
 	let query = document.getElementById("product-list");
