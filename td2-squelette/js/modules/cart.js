@@ -1,5 +1,9 @@
+import {displayCart} from "./ui.js";
+
 //contenu du panier
 let _panier = [];
+
+let message = "";
 
 class panier{
     constructor(ref, price, description){
@@ -27,7 +31,7 @@ export const addToCart = function(produit){
         _panier.push(tmp);
     }
     
-    //save();
+    save();
 
 }
 
@@ -37,47 +41,32 @@ export const genericCalc = function(calc, init){
 
 export const emptyCart = function(){
     _panier = [];
-    document.getElementById("cart-content").innerHTML = 'Votre panier est vide';
+    document.getElementById("cart-content").innerHTML = 'Vous avez vidé votre panier!';
     document.getElementById("total-products").innerHTML = 'x0';
     document.getElementById("cart-total").innerHTML = '0€';
+    localStorage.clear()
 
-    //window.location.href = "index.html";
-    
-    /** 
-    let cartProdNumber = document.getElementById("total-products");
-	let cartTotal = document.getElementById("cart-total");
-
-    cartProdNumber.innerText = 0
-	cartTotal.innerText = 0 + '€';
-
-    let cart = document.getElementById("cart-content");
-    let fils = document.querySelector('tr');
-
-    cart.appendChild(fils);
-    cart.removeChild(fils);
-    */
-
-    //save();
+    save();
 }
 
 
 export const save = function() {
     let tabSer = JSON.stringify(_panier);
     localStorage.setItem("CléUnique4.0", tabSer);
-    console.log("sauvegarde du tableau !");  
+    //console.log("sauvegarde du tableau !");  
   }
   
-  /** 
 export const load = function() {
     let nvTab = localStorage.getItem("CléUnique4.0");
     if (nvTab != null || nvTab != undefined) {
         let tabDeSer = JSON.parse(nvTab);
         _panier = tabDeSer;
+        displayCart();
 
     }else {
-        tab = [];
+        _panier = [];
     }
-}*/
+}
 
 export const getPanier = function(){
 

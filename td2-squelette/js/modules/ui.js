@@ -1,5 +1,4 @@
-import cart from "./cart.js";
-import p, {addToCart} from "./cart.js";
+import {addToCart} from "./cart.js";
 import {getPanier} from "./cart.js";
 import {genericCalc} from "./cart.js";
 
@@ -30,7 +29,6 @@ function displayProduct(product){
 	element.querySelector(".product-add2cart").addEventListener('click', function(e){
 		addToCart(product);
 		displayCart();
-		//console.log(p.panier);
 	});
 	return element;
 
