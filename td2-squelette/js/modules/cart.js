@@ -40,8 +40,12 @@ export const genericCalc = function(calc, init){
 }
 
 export const emptyCart = function(){
+    if (_panier.length === 0) { 
+        document.getElementById("cart-content").innerHTML = 'Votre panier est déjà vide!';
+    }else{
+        document.getElementById("cart-content").innerHTML = 'Vous avez vidé votre panier!';
+    }
     _panier = [];
-    document.getElementById("cart-content").innerHTML = 'Vous avez vidé votre panier!';
     document.getElementById("total-products").innerHTML = 'x0';
     document.getElementById("cart-total").innerHTML = '0€';
     localStorage.clear()
@@ -53,7 +57,6 @@ export const emptyCart = function(){
 export const save = function() {
     let tabSer = JSON.stringify(_panier);
     localStorage.setItem("CléUnique4.0", tabSer);
-    //console.log("sauvegarde du tableau !");  
   }
   
 export const load = function() {
